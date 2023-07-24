@@ -5,6 +5,33 @@
 /* 
   Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
 */
+body{
+  /* background-image: url(background.jpg); */
+  background-color: rgba(0, 0, 0, 0.5);
+ 
+}
+a{
+  float: left;
+  position: relative;
+  overflow: hidden;
+
+}
+a::after {
+
+  background-color: #ce7f16;
+  content: "";
+  width: 0;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  transition: width 0.35s ease 0s;
+  position: absolute;
+}
+a:hover::after {
+  width: 100%;
+ 
+}
+
 
 .main {
   width: 100vw;
@@ -14,19 +41,28 @@
   justify-content: center;
   padding: 120px 24px 160px 24px;
   pointer-events: none;
+  perspective: 1000px;
+  
 }
 
 .main:before {
-  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
+  background-image: url(2669125.jpg);
+  background-repeat: no-repeat;
+  
+  background-position: center;
+  background-size: cover;
   position: absolute;
   content: "";
   z-index: 2;
   width: 100%;
   height: 100%;
   top: 0;
+  /* transform: scaleX(-1); */
+  
 }
 
 .main:after {
+  
   content: "";
   /* background-image: url("/src/assets/grid.svg"); */
   z-index: 1;
@@ -34,8 +70,9 @@
   width: 100%;
   height: 100%;
   top: 0;
-  opacity: 0.4;
   filter: invert(1);
+  transform: translate(-50%, -50%) rotateY(-30deg);
+  
 }
 
 .gradient {
@@ -43,7 +80,7 @@
   z-index: 3;
   width: 100%;
   max-width: 640px;
-  background-image: radial-gradient(
+  /* background-image: radial-gradient(
       at 27% 37%,
       hsla(215, 98%, 61%, 1) 0px,
       transparent 0%
@@ -53,20 +90,33 @@
     radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
     radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
     radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
-    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%); */
+
   position: absolute;
-  content: "";
+  /* content: "";
   width: 100%;
-  height: 100%;
-  filter: blur(100px) saturate(150%);
-  top: 80px;
-  opacity: 0.15;
+  height: 100%; */
+  /* filter: blur(100px) saturate(150%); */
+  /* top: 80px;*/
+ 
 }
 
 @media screen and (max-width: 640px) {
-  .main {
+  .main:before{
     padding: 0;
+    background-image: url(806427.jpg);
+    background-position-x: 20%;
   }
+ 
+  .listitems{
+    display: none;
+  }
+  .containernav{
+   align-items: center;
+   justify-content: center; /* Center the logo */
+    align-items: center;
+  }
+  
 }
 
 /* Tailwind Styles */
@@ -76,23 +126,23 @@
 }
 
 .black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-sm text-white transition-all hover:bg-white hover:text-black;
+  @apply rounded-full border border-black bg-white py-1.5 px-5 text-sm text-black transition-all hover:bg-white hover:text-black;
 }
 
 .head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl text-center;
+  @apply  text-5xl  leading-[1.15] text-white sm:text-6xl text-center;
 }
 
 .orange_gradient {
-  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-amber-600 to-yellow-500 bg-clip-text  text-transparent ;
 }
 
-.desc {
-  @apply mt-5 text-lg text-gray-600 sm:text-xl text-center max-w-2xl;
+.description {
+  @apply mt-10 text-lg  sm:text-xl text-center max-w-2xl;
 }
 
 .url_input {
-  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-10 pr-12 text-sm shadow-lg font-satoshi font-medium focus:border-black focus:outline-none focus:ring-0;
+  @apply block w-full rounded-md border border-gray-200 bg-transparent  py-2.5 pl-10 pr-12 text-sm shadow-lg text-white font-satoshi font-medium focus:border-black focus:outline-none focus:ring-0;
 }
 
 .submit_btn {
@@ -100,17 +150,18 @@
 }
 
 .link_card {
-  @apply p-3 flex justify-start items-center flex-row bg-white border border-gray-200 gap-3 rounded-lg cursor-pointer;
+  @apply p-3 flex justify-start items-center flex-row bg-transparent border border-gray-200 gap-3 text-white backdrop-blur rounded-lg cursor-pointer;
 }
 
 .copy_btn {
-  @apply w-7 h-7 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer;
+  /* @apply w-7 h-7 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer; */
+  @apply w-7 h-7 rounded-full bg-white flex justify-center items-center cursor-pointer;
 }
 
 .blue_gradient {
-  @apply font-black bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
+  @apply font-black bg-gradient-to-r from-amber-600 to-yellow-500 bg-clip-text text-transparent;
 }
 
 .summary_box {
-  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-4;
+  @apply rounded-xl border border-gray-200 bg-black/30 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0)] backdrop-blur-lg p-6 text-white;
 }
