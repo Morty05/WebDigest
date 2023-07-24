@@ -35,7 +35,7 @@ useEffect(()=>{
             <form className='relative flex justify-center item-center' action=""
             onSubmit={handleSubmit}
             >
-                <img src="" alt="linkicon" className='absolute left-0 my-2 ml-3 w-5' />
+                <img src="icons8-link-48.png" alt="linkicon" className='absolute left-0 my-2 ml-3 w-5' />
                 <input type="url" 
                 placeholder='Enter a url'
                 value={article.url}
@@ -49,7 +49,7 @@ useEffect(()=>{
             </form>
             {/* show the history to the user of the urls they have seen */}
 
-            <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
+            <div className="flex flex-col gap-0.4 max-h-60 overflow-y-auto">
                 {allArticles.map((Item,index)=>(
 
                     <div key={`link-${index}`}
@@ -57,10 +57,10 @@ useEffect(()=>{
                     className='link_card'
                     >
  <div className="copy_btn">
-    <img src="vite.svg"
+    <img src="copy.svg"
      alt="copy_icon"className='w-[40%] h-[40%] object-contain' />
  </div>
- <p className="flex-1 font-satoshi text-blue-700 font-medium text-sm truncate">
+ <p className="flex-1 font-satoshi text-beige-700 font-medium text-sm truncate">
     {Item.url}
  </p>
                     </div>
@@ -71,9 +71,9 @@ useEffect(()=>{
         {/* display results */}
         <div className="my-10 max-w-full flex justify-center items-center">
             {isFetching?(
-                <img src="vite.svg" alt="loader" className='w-20 h-20 object-contain' />
+                <img src="loader.svg" alt="loader" className='w-20 h-20 object-contain' />
             ): error?(
-                <p className='font-inter font-bold text-black text-center '>
+                <p className='font-inter font-bold text-white text-center '>
                     Well that wasn't supposed to happen...
                     <br />
 <span className='font-satoshi font-normal text-gray-700'>
@@ -84,7 +84,7 @@ useEffect(()=>{
             (
                 article.summary &&(
                     <div className='flex flex-col gap-3 '>
-                        <h2 className='font-satoshi font-bold text-gray-600 text-xl '>Article <span className='blue_gradient'>Summary</span></h2>
+                        <h2 className=' text-white font-satoshi font-bold text-white-600 text-xl '>WebPage <span className='blue_gradient'>Summary</span></h2>
                         <div className="summary_box"><p>{article.summary}</p></div>
                     </div>
                 )
