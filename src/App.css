@@ -164,4 +164,8 @@ a:hover::after {
 
 .summary_box {
   @apply rounded-xl border border-gray-200 bg-black/30 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0)] backdrop-blur-lg p-6 text-white;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d53d2987594e5631a69788ddf355873ba32af0e8
