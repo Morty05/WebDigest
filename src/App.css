@@ -5,11 +5,7 @@
 /* 
   Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
 */
-body{
-  /* background-image: url(background.jpg); */
-  background-color: rgba(0, 0, 0, 0.5);
- 
-}
+
 a{
   float: left;
   position: relative;
@@ -46,7 +42,10 @@ a:hover::after {
 }
 
 .main:before {
-  background-image: url(2669125.jpg);
+
+  background-image: url(/2669125.jpg);
+  background-size: cover;
+  position: fixed;
   background-repeat: no-repeat;
   
   background-position: center;
@@ -104,7 +103,7 @@ a:hover::after {
 @media screen and (max-width: 640px) {
   .main:before{
     padding: 0;
-    background-image: url(806427.jpg);
+    background-image: url(/806427.jpg);
     background-position-x: 20%;
   }
  
